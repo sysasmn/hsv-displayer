@@ -54,6 +54,10 @@ def hsvtorgb(h, s, v):
 
     return [nearestinteger((rgb1[0]+m)*255), nearestinteger((rgb1[1]+m)*255), nearestinteger((rgb1[2]+m)*255)]
 
+def complementary_hsv(h,s,v):
+    new_hue = h+180 % 360
+    return [new_hue, s, v]  
+
 def fixlength(h):
     #brings length up to 2 in case of a single digit hex number
     if len(h) == 1:
@@ -76,3 +80,4 @@ def hsvtohex(h, s, v):
 
 #print(hsvtorgb(60, 0.5,0.5))
 #print(hsvtohex(60, 0.5,0.5))
+
